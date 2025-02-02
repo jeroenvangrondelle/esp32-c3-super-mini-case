@@ -14,11 +14,11 @@ include <hex-grid.scad>
 include <fastvoronoi_func_bosl2.scad>
 
 // corner definition
-
+//
 cut = 1.5;
 k=.7;
 
-
+// snugness of the fit
 delta=.15;
 
 module case(width, length, height) {
@@ -65,14 +65,15 @@ module cable_case(width, length, height)
     }
 }
 
-points = voronoi_array(cellsize, xmin=-20, xmax=20, ymin=-30, ymax=30);
+// first version of a vornoic based lid
+//points = voronoi_array(cellsize, xmin=-20, xmax=20, ymin=-30, ymax=30);
 
 // 2. Generate array of polygon vertices for voronoi pattern
-polygon_vertices = fastvoronoi(points, 8, rcorner=1);
+//polygon_vertices = fastvoronoi(points, 8, rcorner=1);
 
-linear_extrude(height=1.5) {
-    polygon(polygon_vertices);
-}
+//linear_extrude(height=1.5) {
+//    polygon(polygon_vertices);
+//}
 
 
 
